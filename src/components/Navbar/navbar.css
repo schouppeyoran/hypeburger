@@ -1,0 +1,127 @@
+/* ================ NAVBAR ================ */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.app__navbar-backdrop {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+}
+
+.app__navbar-content {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 15;
+    padding-top: 1.6rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.app__navbar-logo {
+    width: 280px;
+}
+
+.app__navbar-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.app__navbar-links a li {
+    color: var(--color-oliveDrab);
+    font-size: 16px;
+    line-height: 24px;
+    transition: var(--transition);
+}
+
+.app__navbar-links a.active {
+    border-bottom: 2px solid var(--color-oliveDrab);
+}
+
+.app__navbar-links a li:hover {
+    color: var(--color-blueSapphire);
+}
+
+.app__navbar-mobile {
+    display: none;
+    align-items: center;
+    position: relative;
+}
+
+.app__navbar-mobile svg {
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.app__navbar-mobile-links {
+    position: absolute;
+    top: 150%;
+    right: 0%;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: var(--color-watermelonRed);
+    color: var(--color-pearl);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+::-webkit-scrollbar {
+    width: 10px; /* adjust to desired width */
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-oliveDrab);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-watermelonRed);
+    border-radius: 1rem;
+}
+
+@media screen and (max-width: 1150px) {
+    .app__navbar-links {
+        display: none;
+    }
+    
+    .app__navbar-mobile {
+        display: flex;
+    }
+
+    .app__navbar-content {
+        padding-top: 1rem;
+    }
+
+    .app__navbar-logo {
+        width: 200px;
+    }
+
+    .app__navbar-mobile svg {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .app__navbar-backdrop {
+        transform: scale(200%);
+    }
+
+    .app__navbar-content {
+        padding-top: 0.4rem;
+    }
+
+    .app__navbar-logo {
+        width: 140px;
+    }
+}
